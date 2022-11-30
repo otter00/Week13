@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleCalculator</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <p class="title">Simple Calculator</p>
+    <!-- <div class="buttons">
+        <button id="add" onClick="add()">Сложить</button>
+        <button id="sub" onClick="sub()">Вычесть</button>
+        <button id="mult" onClick="mult()">Умножить</button>
+        <button id="div" onClick="div()">Разделить</button>
+    </div> -->
+
+    <input id="first_value" />
+    <input id="second_value" />
+
+    <div class="buttons">
+        <button id="add" onClick="op='+'">Сложить</button>
+        <button id="sub" onClick="op='-'">Вычесть</button>
+        <button id="mult" onClick="op='*'">Умножить</button>
+        <button id="div" onClick="op='/'">Разделить</button>
+    </div>
+
+    <button class="res" onClick="calc()">Результат: </button>
+    <!-- <p id="result"></p> -->
+
+    <script src="index.js"></script>
+</body>
+
+</html>

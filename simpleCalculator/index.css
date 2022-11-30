@@ -1,0 +1,35 @@
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1vw;
+    margin: 0 15vw 0 15vw;
+}
+
+button {
+    font-size: 16px;
+    background-color: azure;
+    border: 3px solid rgb(108, 186, 186);
+    padding: 3% 0 3% 0;   
+}
+
+.res {
+    margin: 5vh 15vw 0 15vw;
+    width: 10vw;
+    height: 50%;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    margin-top: 25vh;
+    font-style: oblique;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+input {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1vh 15vw;
+}
