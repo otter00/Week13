@@ -22,7 +22,7 @@ button {
 .title {
     display: flex;
     justify-content: center;
-    margin-top: 25vh;
+    margin-top: 5vh;
     font-style: oblique;
     font-weight: 700;
     font-size: 36px;
@@ -50,4 +50,24 @@ input {
     width: 10vw;
     border: 3px solid rgb(228, 140, 232);
     height: 2.3vh;
+}
+
+.pictures {
+    margin: 15vh 15vw 5vh 15vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5vw;
+}
+
+.background__pic {
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+}
+
+span {
+    margin: auto;
+
+    font-weight: 800;
+    font-size: 6em;
 }
