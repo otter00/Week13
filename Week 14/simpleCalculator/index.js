@@ -58,7 +58,13 @@ function calc() {
             //alert(result);
             break;
         case '/':
-            result = first / second;
+            if (second == 0) {
+                alert('На ноль делить нельзя!');
+                result = "I can't do this";
+            }
+            else {
+                result = first / second;
+            }
             //alert(result);
             break;
         }
