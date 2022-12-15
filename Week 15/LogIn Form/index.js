@@ -2,15 +2,26 @@
 
 function validateForm(applicantForm) {
 
-    var name = document.getElementById("login__input").value; // read name field value by id
-    //var nameField = form.username;
-    //var passLine = form.pass;
+    // read each field value by id
+    let name = document.getElementById("login__input").value; 
+    let pass = document.getElementById("password__input").value; 
+    let email = document.getElementById("email__input").value; 
+    let phone = document.getElementById("phone__input").value;
+    let gender = document.getElementById('gender').checked;
 
-    if (name != "anastasia") {
-        alert("Incorrect");
-    } else {
+    if (name == "") {
+        alert("Name field is empty!");
+    } else if (pass == "") {
+        alert("Password field is empty!");
+    } else if (email == "") {
+        alert("Email field is empty!");
+    } else if (phone == "") {
+        alert("Phone number field is empty!"); }
+    // } else if (gender == false) {
+    //     alert("Choose your gender");
+    // }
+    else {
         alert("You successfully authorized");
-        //window.location.href = 'htmls/airportOVB.html';
     }
 }
 
