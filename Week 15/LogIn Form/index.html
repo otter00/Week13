@@ -5,16 +5,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="index.css">
 
-    <title>Log In Form</title>
+    <title>LogIn Form</title>
 </head>
 
-
-
 <body>
+    <div class="container">
 
+        <form name="form1" id="login__form" method="POST" action="/apply" onsubmit="return validateForm(this)">
+            <div class="login-form__container" style="background-image: url('river.jpg');">
+                <div class="login-form__wrapper">
+                    <span class="login-form__title">My account</span>
 
+                    <div class="login-form validate-form">
+
+                        <div class="wrap-input validate-input" data-validate="Enter username">
+                            <input class="input" id="login__input" type="text" name="username"
+                                placeholder="Type username" autofocus>
+                        </div>
+
+                        <div class="wrap-input validate-input" data-validate="Enter password">
+                            <input class="input" id="password__input" type="password" name="pass"
+                                placeholder="Type password">
+                        </div>
+
+                        <div class="wrap-input validate-input" data-validate="Enter email">
+                            <input class="input" id="email__input" type="email" name="email" placeholder="Type email">
+                        </div>
+
+                        <div class="wrap-input validate-input" data-validate="Enter your phone">
+                            <input class="input" id="phone__input" type="number" name="number"
+                                placeholder="Type your phone">
+                        </div>
+
+                        <div class="wrap-input validate-input gender" data-validate="Choose your gender">
+                            <div class="gender__radio">
+                                <span>I'm a man</span>
+                                <input class="input" id="man_gender" type="radio" name="gender">
+                            </div>
+                            <div class="gender__radio">
+                                <span>I'm a woman</span>
+                                <input class="input" id="woman_gender" type="radio" name="gender">
+                            </div>
+                        </div>
+
+                        <div class="container-login-form__btn">
+                            <button class="login-form__btn" type="submit">Sign up</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+
+    </div>
 
     <script src="index.js"></script>
 </body>
