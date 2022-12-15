@@ -7,7 +7,9 @@ function validateForm(applicantForm) {
     let pass = document.getElementById("password__input").value; 
     let email = document.getElementById("email__input").value; 
     let phone = document.getElementById("phone__input").value;
-    let gender = document.getElementById('gender').checked;
+
+    let genderM = document.querySelectorAll('input[name="genderM"]').checked;
+    let genderW = document.querySelectorAll('input[name="genderW"]').checked;
 
     if (name == "") {
         alert("Name field is empty!");
@@ -16,11 +18,8 @@ function validateForm(applicantForm) {
     } else if (email == "") {
         alert("Email field is empty!");
     } else if (phone == "") {
-        alert("Phone number field is empty!"); }
-    // } else if (gender == false) {
-    //     alert("Choose your gender");
-    // }
-    else {
+        alert("Phone number field is empty!");
+    } else {
         alert("You successfully authorized");
     }
 }
