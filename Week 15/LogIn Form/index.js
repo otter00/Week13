@@ -58,8 +58,21 @@ function check() {
         let email = document.getElementById("email__input"); 
         let phone = document.getElementById("phone__input");
     
-        let genderM = document.querySelectorAll('input[name="genderM"]').checked;
-        let genderW = document.querySelectorAll('input[name="genderW"]').checked;
+        let genderM = document.getElementById('genderM');
+        let genderW = document.getElementById('genderW');
+
+        let gender1 = false;
+        let gender2 = false;
+
+        if (genderM.checked) {
+            gender1 = true; 
+            gender2 = false;
+        }
+
+        if (genderW.checked) {
+            gender2 = true; 
+            gender1 = false;
+        }
     
         document.getElementById('errorMsg').innerHTML = "";
     
@@ -75,7 +88,10 @@ function check() {
         } else if (phone.value == "") {
             document.getElementById('errorMsg').innerHTML += "Phone field is empty";
             //alert("Phone number field is empty!");
-        } else {
+        } else if ((gender1 == false) && (gender2 == false)) {
+            document.getElementById('errorMsg').innerHTML += "Gender field is empty";
+        }
+        else {
             alert("You successfully authorized");
         }
     }
