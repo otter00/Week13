@@ -92,6 +92,6 @@ function check() {
             document.getElementById('errorMsg').innerHTML += "Gender field is empty";
         }
         else {
-            alert("You successfully authorized");
+            alert(`Welcome, ${name.value}`);
         }
     }
