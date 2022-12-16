@@ -184,7 +184,19 @@ button, input, optgroup, select, textarea {
     cursor: pointer;
 }
 
-.login-form__btn::before {
+
+#errorMsg {
+    font-family: Ubuntu-Bold;
+    font-size: 21px;
+    font-weight: 500;
+    font-style: italic;
+    color: rgb(127, 3, 3);
+
+    display: flex;
+    justify-content: center;
+}
+
+/* .login-form__btn::before {
     background: rgba(3, 13, 149, 0.464);
     opacity: 0;
-} 
+}  */
