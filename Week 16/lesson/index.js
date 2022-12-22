@@ -8,7 +8,19 @@
 //     alert(i); // 1, затем 3, 5, 7, 9
 // }
 
+//Пример с forEach
+
 // ["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => {
 //     alert(`${item} имеет позицию ${index} в ${array}`);
 //   });
 
+
+//Вообще ерунда какая-то
+
+// let arr = ["a", "b"];
+
+// arr.push(function() {
+//   alert( arr );
+// })
+
+// arr[2](); // ?
