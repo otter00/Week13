@@ -13,15 +13,11 @@
 <body>
     <p class="title">Here we sum and sort the array</p>
 
-    <section class="input__container">
-        <span class="input__type">Type the value to add into array</span>
-        <input type="text" class="input__value" />
-    </section>
-
-    <section class="result">
-        <button class="res" onClick="calc()">Result: </button>
-        <div id="result"></div>
-    </section>
+    <form onsubmit="return false;">
+        <label><input type="text" class="js-add" />Type a value to add</label>
+        <button class="add">Add into array</button>
+        <button class="result">Show result</button>
+    </form>
 
 
     <script src="index.js"></script>
