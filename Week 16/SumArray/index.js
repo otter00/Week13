@@ -39,10 +39,19 @@ resBtn.addEventListener('click', () => {
     {
         sortedArray.push(Array[i]);
     }
-    // sortedArray.concat(Array);
-    // sortedArray.sort();
-    //Array.sort();
+
+
+    //sort the array
+    //idk why but ordinary 'sort' doesn't work with values after 9
+    sortedArray.sort((a, b) => {
+        return a - b;
+    });
+
     //sortedArray.sort();
-    console.log(sortedArray.sort());
+
+    //console.log(sortedArray); //show sorted array
+    alert(`Sorted array: [ ${sortedArray} ] has ${sortedArray.length} elements`);
+    //console.log(sortedArray.length); //count elems and show
+    //alert(`Has ${sortedArray.length} elements`);
     sortedArray = [];
 });
