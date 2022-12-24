@@ -11,6 +11,6 @@ form {
     padding: 2%;
 }
 
-select {
+select, input {
     margin: 1%;
 }
