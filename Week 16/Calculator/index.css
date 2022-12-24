@@ -1,0 +1,16 @@
+.travel {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: block;
+    margin: 0 28%;
+    border: 2px dashed rgb(24, 3, 120);
+    border-radius: 30px;
+    padding: 2%;
+}
+
+select {
+    margin: 1%;
+}
