@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+
+    <title>Calculator</title>
+</head>
+
+<body>
+    <form onsubmit="return false" class="form" style="border: 1px solid red;">
+        <select name="" id="" class="arr__transport">
+            <option value="aircraft">By plane</option>
+            <option value="train">By train</option>
+        </select>
+
+        <div class="buy__confirmation">
+            <select name="" id="" class="arr__type" disabled>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+
+            <div id="categories">
+                <input type="radio" name="category" value="1000"> Adult
+                <input type="radio" name="category" value="500"> Retiree
+                <input type="radio" name="category" value="100"> Child
+            </div>
+        </div>
+    </form>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
