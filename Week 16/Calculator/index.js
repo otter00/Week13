@@ -3,6 +3,10 @@ const train = [['Sapsan', 2500], ['Lastochka', 1500], ['RZD', 1000]]
 const form = document.querySelector('.form');
 const arrTransport = form.querySelector('.arr__transport');
 const arrType = form.querySelector('.arr__type');
+const category = document.querySelector('.category');
+
+let priceType = 0;
+let priceCategory = 0;
 
 arrTransport.addEventListener('click', () => {
     arrType.disabled = false;
@@ -20,5 +24,30 @@ arrTransport.addEventListener('click', () => {
         })
         arrType.innerHTML = a; //Put values into (aircraft)select array
     }
-    // console.log(arrType.value);
+
+    console.log(arrType.value); 
+
+    // for(let i = 0; i <= aircraft.length; i++) {
+    //     console.log(aircraft[i][1]);
+    // }
+
 });
+
+arrType.addEventListener('click', () => {
+    priceType += parseInt(arrType.options[arrType.selectedIndex].value);    
+    
+    console.log(priceType);
+    priceType = 0;
+});
+
+category.addEventListener('click', () => {
+    priceCategory += (category.checked == true) ? parseInt(category.value) : 0;
+    
+    console.log(priceCategory);
+});
+
+function sum() {
+    let res = 0;
+    res = priceType + Number(arrType.value);
+    console.log(res);
+}
