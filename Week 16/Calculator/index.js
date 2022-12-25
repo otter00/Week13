@@ -1,35 +1,87 @@
-// const aircraft = [['Boeing-747', 10000], ['Airbus-380', 12000], ['Airbus-A320Neo', 5000]];
-// const train = [['Sapsan', 2500], ['Lastochka', 1500], ['RZD', 1000]]
 const form = document.querySelector('.form');
-// const arrTransport = form.querySelector('.arr__transport');
-// const arrType = form.querySelector('.arr__type');
-// const category = document.querySelector('.category');
-const arrYear = document.querySelector('.arr__year');
-const arrCar = document.querySelector('.arr__car');
-const arrCategory = document.querySelector('.category');
-let count = document.getElementById("count");
+const arrClass = document.querySelector('.arr__class');
+const arrPlane = document.querySelector('.arr__plane');
+const button = document.querySelector('.result');
+const inputPeople = document.querySelector('#count');
+const category = document.querySelectorAll('input[name="category"]')
+const lunch = document.querySelectorAll('input[name="lunch"]');
 
-let summa = 0;
+let lunchPrice = 0;
 
-arrCar.addEventListener('click', ()=> {
-    arrYear.disabled = false;
+// const cbn = document.querySelector('.none');
+// const cbl =  document.querySelector('.lunch');
+// const cbs = document.querySelector('.snack');
+
+// cbn.addEventListener('mousedown', ()=> {
+//     cbl.disabled = true;
+//     cbs.disabled = true;
+// });
+
+
+const gr = document.getElementsByName('lunch');
+window.onclick = function() {
+if (gr[2].checked) {
+    gr[0].disabled = true;
+    gr[1].disabled = true;
+} else {
+    gr[0].disabled = false;
+    gr[1].disabled = false;
+}
+}
+
+arrPlane.addEventListener('click', ()=> {
+    arrClass.disabled = false;
 });
+
+inputPeople.addEventListener('keydown', ()=> {
+    button.disabled = false;
+});
+
 
 function sum() {
     let price = 0;
-    price += parseInt(arrYear.options[arrYear.selectedIndex].value);
-    price += parseInt(arrCar.options[arrCar.selectedIndex].value);
+    price += parseInt(arrClass.options[arrClass.selectedIndex].value);
+    price += parseInt(arrPlane.options[arrPlane.selectedIndex].value);
 
-    //price += (arrCategory.checked == true) ? parseInt(arrCategory.value) : 0;
-    if (count.value === '') {
+    for (const c of category) {
+        if (c.checked) {
+            price += parseInt(c.value);
+            //console.log(c.value)
+        }
+    }
+
+    // ONE MORE GREAT WAY
+    // const selected = document.querySelector('input[name="category"]:checked').value;
+    // console.log(selected)
+
+    for (const l of lunch) {
+        if (l.checked) {
+            price += parseInt(l.value);
+            //console.log(l.value);
+        }
+    }
+
+    if (inputPeople.value === '') {
         price = price;
     } else {
-        price = parseInt(count.value) * price;
+        price = parseInt(inputPeople.value) * price;
     }
-    price *= 1000;
-    console.log(price);
+    price *= 1.3;
+    //console.log(price);
+
+    document.getElementById("summarize").innerHTML = price;
 }
 
+
+
+//          EXAMPLE CODE        //
+
+// const aircraft = [['Boeing-747', 10000], ['Airbus-380', 12000], ['Airbus-A320Neo', 5000]];
+// const train = [['Sapsan', 2500], ['Lastochka', 1500], ['RZD', 1000]]
+//const form = document.querySelector('.form');
+// const arrTransport = form.querySelector('.arr__transport');
+// const arrType = form.querySelector('.arr__type');
+// const category = document.querySelector('.category');
 // let priceType = 0;
 // let priceCategory = 0;
 

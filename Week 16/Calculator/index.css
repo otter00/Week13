@@ -11,6 +11,21 @@ form {
     padding: 2%;
 }
 
-select, input {
+select, input, .summarize {
     margin: 1%;
+}
+
+.summarize {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    border: 1px solid rgb(24, 3, 120);
+    border-radius: 35px;
+    height: 3em;
+    width: 7vw;
 }

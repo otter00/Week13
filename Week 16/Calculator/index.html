@@ -11,25 +11,33 @@
 </head>
 
 <body>
-    <h1 class="travel">Which way would you prefer?</h1>
+    <h1 class="travel">Which aircraft would you prefer?</h1>
 
     <form onsubmit="return false" class="form">
-        <select name="" id="" class="arr__car">
-            <option value="5000">Mazda</option>
-            <option value="10000" selected>Honda</option>
-            <option value="900">Toyota</option>
+        <select name="" id="" class="arr__plane">
+            <option value="5000">Boeing-747</option>
+            <option value="10000" selected>Airbus-380</option>
+            <option value="900">Airbus-A320 Neo</option>
         </select>
 
-        <select name="" id="" class="arr__year" disabled>
-            <option value="500">1980</option>
-            <option value="1000">2000</option>
-            <option value="2000" selected>2010</option>
+        <select name="" id="" class="arr__class" disabled>
+            <option value="500">Economy</option>
+            <option value="1000">Comfort</option>
+            <option value="2000" selected>Business</option>
         </select>
 
-        <div id="categories" class="arr__category">
-            <input type="radio" name="category" value="5000" id="#oldschool"> OldSchool
-            <input type="radio" name="category" value="5500" id="newest"> Newest
-            <input type="radio" name="category" value="1500" id="vintage"> Vintage
+        <div id="categories">
+            <label>Choose category</label>
+            <input type="radio" name="category" value="3000" id="adult"> Adult
+            <input type="radio" name="category" value="2500" id="retiree"> Retiree
+            <input type="radio" name="category" value="1500" id="child"> Child
+        </div>
+
+        <div id="lunch" name="check">
+            <label>Preferable dish</label>
+            <input type="checkbox" name="lunch" value="300" id="lunch" class="lunch"> Lunch
+            <input type="checkbox" name="lunch" value="150" id="lunch" class="snack"> Snack
+            <input type="checkbox" name="lunch" value="0" id="none" class="none"> None
         </div>
 
         <span>
@@ -37,9 +45,21 @@
             <input type="text" id="count" />
         </span>
 
-        <button class="result" onclick="sum()">Result</button>
+        <section class="summarize">
+            <button class="result" onclick="sum()" disabled>Show result</button>
+            <div id="summarize"></div>
+        </section>
     </form>
-    <!-- <form onsubmit="return false" class="form">
+
+    <script src="index.js"></script>
+</body>
+
+</html>
+
+
+<!-- EXAMPLE CODE -->
+
+<!-- <form onsubmit="return false" class="form">
         <select name="" id="" class="arr__transport">
             <option value="aircraft">By plane</option>
             <option value="train">By train</option>
@@ -60,8 +80,3 @@
 
         <button class="result" onclick="sum()">Result</button>
     </form> -->
-
-    <script src="index.js"></script>
-</body>
-
-</html>
