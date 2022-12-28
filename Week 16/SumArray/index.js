@@ -54,4 +54,5 @@ resBtn.addEventListener('click', () => {
     //console.log(sortedArray.length); //count elems and show
     //alert(`Has ${sortedArray.length} elements`);
     sortedArray = [];
+    Array = [];
 });
