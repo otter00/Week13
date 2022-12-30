@@ -13,7 +13,7 @@
 <body>
     <form onsubmit="return false;">
         <input type="text" class="comment__field" id="comment__field" placeholder="add your comment" value="" />
-        <input type="button" class="add__comment" id="add__comment" value="Add" />
+        <button class="add__comment" id="add__comment" value="Add" onclick="checkSpam()">Add</button>
 
         <div class="content" id="content"></div>
     </form>
