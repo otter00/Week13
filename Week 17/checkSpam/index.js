@@ -1,6 +1,11 @@
 let addButton = document.querySelector('#add__comment');
-let comment = document.querySelector('#comment__field')
+let field = document.querySelector('#comment__field');
+let commentContent = document.querySelector('#content');
 
-// addButton.addEventListener('click', ()=>{
-//     comment.value = "";
-// });
+addButton.addEventListener('click', ()=>{
+    commentContent.innerHTML += `${field.value}`+'\n';
+});
+
+addButton.addEventListener('click', ()=>{
+    field.value = "";
+});

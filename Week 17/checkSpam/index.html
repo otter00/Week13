@@ -11,8 +11,12 @@
 </head>
 
 <body>
-    <input type="text" class="comment__field" id="comment__field" placeholder="add your comment" value="" />
-    <input type="button" class="add__comment" id="add__comment" value="Add" />
+    <form onsubmit="return false;">
+        <input type="text" class="comment__field" id="comment__field" placeholder="add your comment" value="" />
+        <input type="button" class="add__comment" id="add__comment" value="Add" />
+
+        <div class="content" id="content"></div>
+    </form>
 
     <script src="index.js"></script>
 </body>
