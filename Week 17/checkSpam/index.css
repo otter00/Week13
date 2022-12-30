@@ -2,10 +2,12 @@
     margin: 1%;
 }
 
-div {
+.content {
     border: 1px solid black; 
     min-height: 50vh;
     border-radius: 7px;
+
+    display: none;
 }
 
 .comment__field {
