@@ -9,19 +9,19 @@ console.log(inp);
 //console.log(inp.length);
 
 //let trimmed;
-//let letters;
+let letters = /^[a-zA-Za-яА-ЯёЁ]+$/.test();
 let msplitted;
 
 button.addEventListener('click', ()=>{
     console.log(mfield.value); //check whether the field is ok
 
-    //letters = mfield.value.match(/[a-z]/gi).join(" ");
-    //console.log(letters);
-
     console.log(typeof(mfield.value)); //string
 
+    letters = mfield.value.replace(/[0-9]/g, '');
+    console.log(letters);
+
     msplitted = 
-        mfield.value.split(" ").filter(
+        letters.split(" ").filter(
         el=>(el !== "")).map(
             //toLowerCase the entire word
             (word, index) => word.toLowerCase()).map(
@@ -30,17 +30,13 @@ button.addEventListener('click', ()=>{
         //toUpperCase the first letter
         (word, index) => word[0].toUpperCase() + word.slice(1));
     console.log(msplitted);
-
+        
     //trimmed = msplitted.filter(el=>(el !== "")); //filter the array
     //console.log(trimmed);
 
     for (let i=0; i <= inp.length; i++) {
         inp[i].setAttribute('value', `${msplitted[i]}`); //set values into their places
     }
-
-    // for (let i=0; i <= inp.length; i++) {
-    //     inp[i].value.match(/[a-z]/gi).join('');
-    // }
 
     // for(let i=0; i <= msplitted.length; i++) {
     //     fname.setAttribute('value', `${msplitted[0]}`);
