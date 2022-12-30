@@ -8,8 +8,8 @@ let inp = document.querySelectorAll('.inp');
 console.log(inp);
 //console.log(inp.length);
 
-let trimmed;
-let letters;
+//let trimmed;
+//let letters;
 let msplitted;
 
 button.addEventListener('click', ()=>{
@@ -37,6 +37,7 @@ button.addEventListener('click', ()=>{
     for (let i=0; i <= inp.length; i++) {
         inp[i].setAttribute('value', `${msplitted[i]}`); //set values into their places
     }
+
     // for (let i=0; i <= inp.length; i++) {
     //     inp[i].value.match(/[a-z]/gi).join('');
     // }
@@ -50,4 +51,8 @@ button.addEventListener('click', ()=>{
     //     //document.querySelector('.sname').innerHTML = msplitted[1];
     //     //document.querySelector('.lname').innerHTML = msplitted[2];
     // }
+});
+
+button.addEventListener('click', ()=>{
+    mfield.value = "";
 });
