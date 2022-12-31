@@ -1,0 +1,22 @@
+div {
+    min-height: 10vh;
+    width: 50vw;
+    border: 1px solid grey;
+    border-radius: 7px;
+}
+
+* {
+    margin: 1%;
+}
+
+button {
+    width: 10vw;
+    min-height: 6vh;
+    border: none;
+    background-color: rgb(87, 154, 253);
+    border-radius: 7px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
