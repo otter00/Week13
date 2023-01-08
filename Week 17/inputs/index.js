@@ -30,11 +30,14 @@ button.addEventListener('click', ()=>{
         //toUpperCase the first letter
         (word, index) => word[0].toUpperCase() + word.slice(1));
     console.log(msplitted);
+
+    console.log(typeof(msplitted.value));
         
     //trimmed = msplitted.filter(el=>(el !== "")); //filter the array
     //console.log(trimmed);
 
-    for (let i=0; i <= inp.length; i++) {
+    for (let i=0; i < inp.length; i++) {
+        console.log(inp[i]);
         inp[i].setAttribute('value', `${msplitted[i]}`); //set values into their places
     }
 
