@@ -22,7 +22,8 @@ buttonGenerate.addEventListener('click', ()=>{
     console.log(array);
     //console.log(typeof(array)); //object
 
-    elemDiv.style.cssText = 'padding:1%;width:20vw;min-height:50px;margin-left:1%;border:1px solid black;border-radius:7px;';
+    elemDiv.classList.add("elem__result"); 
+    //elemDiv.style.cssText = 'padding:1%;width:20vw;min-height:50px;margin-left:1%;border:1px solid black;border-radius:7px;';
     document.body.appendChild(elemDiv);
 
     array.sort((a, b) => {
