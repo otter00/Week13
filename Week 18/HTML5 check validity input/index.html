@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>А какой котик у тебя?</title>
+
+    <style>
+        body {
+            background-image: url("https://nfg-sofun.s3.amazonaws.com/uploads/project/photo/57561/poster_board_Untitled_design.png");
+            background-size: cover;
+            font-weight: 600;
+        }
+
+        textarea {
+            color: rgb(170, 163, 163);
+        }
+
+        #forFont {
+            font-weight: 100;
+            font-size: 0.9em;
+        }
+
+        input:required:valid {
+            border-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+
+        <fieldset>
+            <legend>Имя</legend>
+            <p>
+                <label for="кличка">Кличка питомца</label>
+                <input type="text" id="кличка" required />
+            </p>
+
+            <p>
+                <label for="возраст">Возраст питомца</label>
+                <input type="number" min=1 max=100 id="возраст" required />
+            </p>
+
+            <p>
+                <label for="владелец">Имя владельца</label>
+                <input type="text" id="владелец" required />
+            </p>
+
+            <p>
+                <label for="почта">Почта владельца</label>
+                <input type="email" id="почта" required />
+            </p>
+
+            <p>
+                <label for="телефон">Телефон владельца</label>
+                <input type="tel" id="телефон" minlength="1" maxlength="20" required />
+            </p>
+        </fieldset>
+
+
+        <p>
+            Выберите породу
+        </p>
+        <select>
+            <option value="first">Мейн-кун</option>
+            <option value="second">Бенгальская кошка</option>
+            <option value="third" selected="selected">Канадский сфинкс</option>
+            <option value="forth">Метис</option>
+            <option value="fifth">Сиамская кошка</option>
+        </select>
+
+        <p>
+            Чем питается?
+        </p>
+        <p>
+            <input type="checkbox" id="dry">
+            <label for="dry">Сухой корм</label>
+        </p>
+        <p>
+            <input type="checkbox" id="wet">
+            <label for="wet">Влажный корм</label>
+        </p>
+        <p>
+            <input type="checkbox" id="natural" />
+            <label for="natural">Натуральный корм</label>
+        </p>
+
+        <p>Пол питомца</p>
+        <input type="radio" name="sex" value="m" /><span>Самец</span>
+        <input type="radio" name="sex" value="f" /><span>Самка</span>
+
+        <p>Комментарий</p>
+        <textarea rows="10" cols="30">
+Добавьте описание своего питомца, нам очень интересно!
+</textarea>
+
+        <p>Фотографию питомца можно добавить кнопкой
+            <input type="button" id="photo" value="Нажми меня" />
+            <label for="photo" id="forFont">Файл не выбран</label>
+        </p>
+        <input type="submit" value="Сохранить" />
+
+    </form>
+
+</body>
+
+</html>
