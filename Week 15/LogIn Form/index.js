@@ -1,5 +1,15 @@
 /*      AUTHORIZATION CHANGE        */
 
+let button = document.querySelector(".login-form__btn");
+let form = document.querySelector('form');
+let errors = [];
+
+let genderM = document.getElementById('genderM');
+let genderW = document.getElementById('genderW');
+
+let gender1 = false;
+let gender2 = false;
+
 // function validateForm(applicantForm) {
 
 //     // read each field value by id
@@ -50,10 +60,6 @@
 // const applicantForm = document.getElementById('login__form') // our form
 // applicantForm.addEventListener('submit', handleFormSubmit) // check when we click submit button to send data and refresh page
 
-let button = document.querySelector(".login-form__btn");
-let form = document.querySelector('form');
-let errors = [];
-
 // button.addEventListener('click', ()=> {
 //         // read each field value by id
 //         let name = document.getElementById("login__input"); 
@@ -99,14 +105,6 @@ let errors = [];
 //         }
 // });
 
-    
-        let genderM = document.getElementById('genderM');
-        let genderW = document.getElementById('genderW');
-
-        let gender1 = false;
-        let gender2 = false;
-
-
 //Проверка для каждого поля (поля получаем по одному в функции ниже в цикле)
 function checkValidity(input) {
     let validity = input.validity;
@@ -138,7 +136,7 @@ button.addEventListener('click', ()=>{
 
     regexp = /[A-Za-zА-Яа-яЁё]/gi; 
 
-		//перебираем их и на каждый вызываем функцию валидации
+	//перебираем их и на каждый вызываем функцию валидации
     for (let input of inputs) {
         //console.log(input);
         checkValidity(input);
