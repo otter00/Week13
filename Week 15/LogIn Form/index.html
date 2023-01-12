@@ -16,19 +16,19 @@
     <div class="container">
 
         <form name="form1" id="login__form" method="POST" action="/apply" onsubmit="return validateForm(this)">
-            <div class="login-form__container" style="background-image: url('river.jpg');">
+            <div class=" login-form__container" style="background-image: url('river.jpg');">
                 <div class="login-form__wrapper">
                     <span class="login-form__title">My account</span>
 
                     <div class="login-form validate-form">
 
                         <div class="wrap-input validate-input" data-validate="Enter username">
-                            <input class="input" id="login__input" type="text" name="username"
+                            <input class="input" id="login__input" type="text" name="username" minlength=2
                                 placeholder="Type username" autofocus>
                         </div>
 
                         <div class="wrap-input validate-input" data-validate="Enter password">
-                            <input class="input" id="password__input" type="password" name="pass"
+                            <input class="input" id="password__input" type="password" minlength=5 name="password"
                                 placeholder="Type password">
                         </div>
 
@@ -37,8 +37,8 @@
                         </div>
 
                         <div class="wrap-input validate-input" data-validate="Enter your phone">
-                            <input class="input" id="phone__input" type="number" name="number"
-                                placeholder="Type your phone">
+                            <input class="input" id="phone__input" type="tel" minlength=6 maxlength=20
+                                name="phone number" placeholder="Type your phone">
                         </div>
 
                         <div class="wrap-input validate-input gender" data-validate="Choose your gender">
@@ -54,10 +54,11 @@
 
                         <div class="container-login-form__btn">
                             <!-- <button class="login-form__btn" type="submin">Sign up</button> -->
-                            <button class="login-form__btn" type="button" onclick="check();">Sign up</button>
+                            <button class="login-form__btn" type="button">Sign
+                                up</button>
                         </div>
 
-                        <div id="errorMsg"></div>
+                        <div id="errorMsg" class="errors__info"></div>
                     </div>
 
                 </div>

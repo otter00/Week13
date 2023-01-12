@@ -50,8 +50,10 @@
 // const applicantForm = document.getElementById('login__form') // our form
 // applicantForm.addEventListener('submit', handleFormSubmit) // check when we click submit button to send data and refresh page
 
-function check() {
+let button = document.querySelector(".login-form__btn");
+let errors = [];
 
+button.addEventListener('click', ()=> {
         // read each field value by id
         let name = document.getElementById("login__input"); 
         let pass = document.getElementById("password__input"); 
@@ -91,7 +93,46 @@ function check() {
         } else if ((gender1 == false) && (gender2 == false)) {
             document.getElementById('errorMsg').innerHTML += "Gender field is empty";
         }
-        else {
-            alert(`Welcome, ${name.value}`);
-        }
+        // else {
+        //     alert(`Welcome, ${name.value}`);
+        // }
+});
+
+//Проверка для каждого поля (поля получаем по одному в функции ниже в цикле)
+function checkValidity(input) {
+    let validity = input.validity;
+    let inpName = input.name;
+
+    if (validity.patternMismatch) 
+		{ errors.push('Неверный формат заполнения!'); }
+    
+		if (validity.tooLong) 
+		{ let maxlength = input.maxLength;
+			errors.push(`Слишком длинное значение ${inpName}! Максимальная длина:  ` + maxlength + `<br>`); }
+    
+		if (validity.tooShort) 
+		{ let minlength = input.minLength;
+			errors.push(`Слишком короткое значение ${inpName}! Минимальная длина: ` + minlength + `<br>`); }
+}
+
+button.addEventListener('click', ()=>{
+//Проверка для всех полей
+	//получаем все инпуты
+    let inputs = document.querySelectorAll("input");
+
+		//перебираем их и на каждый вызываем функцию валидации
+    for (let input of inputs) {
+        //console.log(input);
+        checkValidity(input);
     }
+
+	//выводим ошибки в div 
+    let errorDiv = document.querySelector('.errors__info');
+    errorDiv.innerHTML = errors.join('\n');
+
+    if (errors.length == 0) {
+        alert(`Welcome, ${document.getElementById("login__input").value}`);
+    }
+
+    errors = []; //чистим массив
+});
