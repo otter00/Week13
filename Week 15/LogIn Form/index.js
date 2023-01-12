@@ -136,6 +136,8 @@ button.addEventListener('click', ()=>{
 	//получаем все инпуты
     let inputs = document.querySelectorAll("input");
 
+    regexp = /[A-Za-zА-Яа-яЁё]/gi; 
+
 		//перебираем их и на каждый вызываем функцию валидации
     for (let input of inputs) {
         //console.log(input);
@@ -151,7 +153,11 @@ button.addEventListener('click', ()=>{
         gender1 = false;
     }
     if ((gender1 == false) && (gender2 == false)) {
-        errors.push("Gender field is empty");
+        errors.push(`Gender field is empty`);
+    }
+
+    if (!document.getElementById("login__input").value.match(regexp)) {
+        errors.push(`${document.getElementById("login__input").name} is incorrect`);
     }
 
 	//выводим ошибки в div 
@@ -160,7 +166,10 @@ button.addEventListener('click', ()=>{
 
     if (errors.length == 0) {
         alert(`Welcome, ${document.getElementById("login__input").value}`);
+        location.reload(); //перезагружаем страницу, если всё введено корректно, 
+        //чтобы очистить поля для дальнейшего ввода
     }
 
     errors = []; //чистим массив
+
 });
