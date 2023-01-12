@@ -99,6 +99,14 @@ let errors = [];
 //         }
 // });
 
+    
+        let genderM = document.getElementById('genderM');
+        let genderW = document.getElementById('genderW');
+
+        let gender1 = false;
+        let gender2 = false;
+
+
 //Проверка для каждого поля (поля получаем по одному в функции ниже в цикле)
 function checkValidity(input) {
     let validity = input.validity;
@@ -132,6 +140,18 @@ button.addEventListener('click', ()=>{
     for (let input of inputs) {
         //console.log(input);
         checkValidity(input);
+    }
+
+    if (genderM.checked) {
+        gender1 = true; 
+        gender2 = false;
+    }
+    if (genderW.checked) {
+        gender2 = true; 
+        gender1 = false;
+    }
+    if ((gender1 == false) && (gender2 == false)) {
+        errors.push("Gender field is empty");
     }
 
 	//выводим ошибки в div 
