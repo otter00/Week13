@@ -51,60 +51,64 @@
 // applicantForm.addEventListener('submit', handleFormSubmit) // check when we click submit button to send data and refresh page
 
 let button = document.querySelector(".login-form__btn");
+let form = document.querySelector('form');
 let errors = [];
 
-button.addEventListener('click', ()=> {
-        // read each field value by id
-        let name = document.getElementById("login__input"); 
-        let pass = document.getElementById("password__input"); 
-        let email = document.getElementById("email__input"); 
-        let phone = document.getElementById("phone__input");
+// button.addEventListener('click', ()=> {
+//         // read each field value by id
+//         let name = document.getElementById("login__input"); 
+//         let pass = document.getElementById("password__input"); 
+//         let email = document.getElementById("email__input"); 
+//         let phone = document.getElementById("phone__input");
     
-        let genderM = document.getElementById('genderM');
-        let genderW = document.getElementById('genderW');
+//         let genderM = document.getElementById('genderM');
+//         let genderW = document.getElementById('genderW');
 
-        let gender1 = false;
-        let gender2 = false;
+//         let gender1 = false;
+//         let gender2 = false;
 
-        if (genderM.checked) {
-            gender1 = true; 
-            gender2 = false;
-        }
+//         if (genderM.checked) {
+//             gender1 = true; 
+//             gender2 = false;
+//         }
 
-        if (genderW.checked) {
-            gender2 = true; 
-            gender1 = false;
-        }
+//         if (genderW.checked) {
+//             gender2 = true; 
+//             gender1 = false;
+//         }
     
-        document.getElementById('errorMsg').innerHTML = "";
+//         document.getElementById('errorMsg').innerHTML = "";
     
-        if (name.value == "") {
-            document.getElementById('errorMsg').innerHTML += "Name field is empty";
-            //alert("Name field is empty!");
-        } else if (pass.value == "") {
-            document.getElementById('errorMsg').innerHTML += "Password field is empty";
-            //alert("Password field is empty!");
-        } else if (email.value == "") {
-            document.getElementById('errorMsg').innerHTML += "Email field is empty";
-            //alert("Email field is empty!");
-        } else if (phone.value == "") {
-            document.getElementById('errorMsg').innerHTML += "Phone field is empty";
-            //alert("Phone number field is empty!");
-        } else if ((gender1 == false) && (gender2 == false)) {
-            document.getElementById('errorMsg').innerHTML += "Gender field is empty";
-        }
-        // else {
-        //     alert(`Welcome, ${name.value}`);
-        // }
-});
+//         if (name.value == "") {
+//             document.getElementById('errorMsg').innerHTML += "Name field is empty";
+//             //alert("Name field is empty!");
+//         } else if (pass.value == "") {
+//             document.getElementById('errorMsg').innerHTML += "Password field is empty";
+//             //alert("Password field is empty!");
+//         } else if (email.value == "") {
+//             document.getElementById('errorMsg').innerHTML += "Email field is empty";
+//             //alert("Email field is empty!");
+//         } else if (phone.value == "") {
+//             document.getElementById('errorMsg').innerHTML += "Phone field is empty";
+//             //alert("Phone number field is empty!");
+//         } else if ((gender1 == false) && (gender2 == false)) {
+//             document.getElementById('errorMsg').innerHTML += "Gender field is empty";
+//         }
+//         else {
+//              alert(`Welcome, ${name.value}`);
+//         }
+// });
 
 //Проверка для каждого поля (поля получаем по одному в функции ниже в цикле)
 function checkValidity(input) {
     let validity = input.validity;
     let inpName = input.name;
 
+    if (input.value == "") {
+        errors.push(`Поле ${inpName} не заполнено`); }
+
     if (validity.patternMismatch) 
-		{ errors.push('Неверный формат заполнения!'); }
+		{ errors.push(`Неверный формат заполнения ${inpName}`); }
     
 		if (validity.tooLong) 
 		{ let maxlength = input.maxLength;
@@ -113,6 +117,10 @@ function checkValidity(input) {
 		if (validity.tooShort) 
 		{ let minlength = input.minLength;
 			errors.push(`Слишком короткое значение ${inpName}! Минимальная длина: ` + minlength + `<br>`); }
+
+        if (validity = false) {
+            alert('Welcome!');
+        }
 }
 
 button.addEventListener('click', ()=>{
