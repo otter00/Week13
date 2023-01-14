@@ -1,14 +1,21 @@
+//search for comment input field
 const comment = document.querySelector('.form__text');
-const listComments = document.querySelector('.list-comments');
+//search for comment save field
+const listComments = document.querySelector('.list__comments');
 
 
-//функция для сохранения комментария в локальном хранилище, первый параметр - комментарий, второй, дата, которая используется как уникальный ключ
+//function that saves the note into local storage
+//1st param - comment (note)
+//2nd param  - datetime, unique key
 const saveComment = (dateKey, commItem) => {
     localStorage.setItem(`${dateKey}`, `${commItem}`);
 }
 
 
-//функция для создания карточки с комментарием, создание разметки, которую позже встроим в сайт, первый параметр - комментарий, второй, дата, которая используется как дата создания заметки =) 
+//function that creates card with notes
+//html div (visible comment storage) dynamically created
+//1st param - comment (note)
+//2nd param - datetime, when the note has been created
 const createCard = (comm, dateKey) => {
     const div = document.createElement('div');
     const p = document.createElement('p');
@@ -17,6 +24,7 @@ const createCard = (comm, dateKey) => {
     span.className = "span";
     span.textContent = dateKey;
 
+    p.className = "p";
     p.textContent = comm;
 
     div.className = "text";
@@ -27,19 +35,25 @@ const createCard = (comm, dateKey) => {
 }
 
 
-//при вызове отрисовывает комментарий на сайте, первый параметр - контейнер, куда отрисосвываем, второй - элемент, который надо отрисовать
+//displays the note upon the sheet
+//1st param - container for notes
+//2nd param - elem to display
 const addComment = (list, item) => {
     list.append(item);
 }
 
 
-//при вызове очищаем поле ввода коментария
+//clear the input field
 const delValue = (input) => {
     input.value = ''
 }
 
 
-//делаем проверку, есть ли заметки в локальном хранилище. Внимание! Этот материал вы еще не проходили, это уже работа с объектами. Усложненная часть задачи
+//look whether local storage already have saved notes
+
+//Внимание! Этот материал вы еще не проходили, это уже работа с объектами. 
+//Усложненная часть задачи
+
 if (localStorage.length != 0) {
     for (key in localStorage) {
         if (key[0] == 1) {
@@ -48,16 +62,27 @@ if (localStorage.length != 0) {
     }
 }
 
+//check for empty note field
+let checkContent = (note) => {
+    if (note.value == "") {
+        return false;
+    } else { return true; }
+}
 
-//функция, которая создаст, отрисует и добавит комментарий на сайт и в локальное хранилище
-// + очистит поле, в которое комментарий был введен 
+//function that creates, displays and adds note into local storage and comment save field
+//clears the input field as well
 // (костыль с датой и локальным хранилищем)
 const handleComment = () => {
     const date = new Date();
+    const checking = checkContent(comment);
 
-    saveComment(`1${date}`, comment.value);
-    addComment(listComments, createCard(comment.value, date));
-    delValue(comment);
+    if (!checking) {
+        alert("Type the note first");
+    } else {
+        saveComment(`1${date}`, comment.value);
+        addComment(listComments, createCard(comment.value, date));
+        delValue(comment);
+    }
 }
 
 // listComments.append(createCard('Hello!'));
