@@ -62,7 +62,7 @@ if (localStorage.length != 0) {
     }
 }
 
-//check for empty note field
+//check whether note field is empty
 let checkContent = (note) => {
     if (note.value == "") {
         return false;
@@ -73,7 +73,11 @@ let checkContent = (note) => {
 //clears the input field as well
 // (костыль с датой и локальным хранилищем)
 const handleComment = () => {
+    //set datetime when the note had been written
     const date = new Date();
+    //check whether the input field is empty
+    //if true, then save
+    //if false, then alert
     const checking = checkContent(comment);
 
     if (!checking) {

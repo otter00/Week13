@@ -27,8 +27,7 @@
 }
 
 .list__comments {
-    margin-top: 7px;
-    margin-left: 7px;
+    margin: 7px;
     gap: 7px;
     display: inline-flex;
 }
