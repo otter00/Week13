@@ -1,0 +1,28 @@
+.div__items {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+    margin: 10px 5px 5px 0px;
+}
+
+.item__img {
+    width: 100px;
+    height: 100px;
+}
+
+.item__text, .item__name {
+    margin-left: 7px;
+}
+
+input {
+    border-radius: 5px;
+    margin-left: 7px;
+}
+
+button {
+    background-color: antiquewhite;
+    border: 1px solid rgb(155, 96, 20);
+    border-radius: 5px;
+    color: rgb(155, 96, 20);
+}
