@@ -62,12 +62,10 @@ const addElement = (container) => {
         //тут возвращается див с комментарием и 
         //именем в общем его я кладу в переменную и дальше ее удочеряю в разметку
         //console.log(element);
-        arr.push(`${element.outerHTML}`);//это новый для вас код, признаюсь я тоже его только сегодня узнала
-        // задала гуглу вопрос, есть ли что-то что превращает html разметку в строку и вуаля, есть все, что душе угодно =)
-        //.outerHTML пользуйтесь. И не нужен JSON =) 
+        arr.push(`${element.outerHTML}`);
+        //превращает html разметку в строку
+        //.outerHTML. И не нужен JSON =) 
         container.append(element);
-
-        //yes this fuck has useful comments from Diana
 }
 
 //check whether content is empty
