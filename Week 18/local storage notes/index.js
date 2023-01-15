@@ -62,7 +62,7 @@ if (localStorage.length != 0) {
     }
 }
 
-//check whether note field is empty
+//check whether cotent field is empty
 let checkContent = (note) => {
     if (note.value == "") {
         return false;
