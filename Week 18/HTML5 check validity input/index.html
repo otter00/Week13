@@ -64,7 +64,7 @@
         <p>
             Выберите породу
         </p>
-        <select id="breed">
+        <select id="breed" onChange="breedFunction(this);">
             <option value="first">Мейн-кун</option>
             <option value="second">Бенгальская кошка</option>
             <option value="third" selected="selected">Канадский сфинкс</option>
@@ -76,21 +76,21 @@
             Чем питается?
         </p>
         <p>
-            <input type="checkbox" id="dry">
+            <input type="checkbox" class="meal" id="dry">
             <label for="dry">Сухой корм</label>
         </p>
         <p>
-            <input type="checkbox" id="wet">
+            <input type="checkbox" class="meal" id="wet">
             <label for="wet">Влажный корм</label>
         </p>
         <p>
-            <input type="checkbox" id="natural" />
+            <input type="checkbox" class="meal" id="natural" />
             <label for="natural">Натуральный корм</label>
         </p>
 
         <p>Пол питомца</p>
-        <input type="radio" name="sex" value="m" /><span>Самец</span>
-        <input type="radio" name="sex" value="f" /><span>Самка</span>
+        <input type="radio" name="sex" value="Самец" />Самец
+        <input type="radio" name="sex" value="Самка" />Самка
 
         <p>Комментарий</p>
         <textarea rows="10" cols="30">
