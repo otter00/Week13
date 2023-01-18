@@ -4,9 +4,7 @@ let owner = document.getElementById('владелец');
 let email = document.getElementById('почта');
 let phone = document.getElementById('телефон');
 const sex = document.querySelectorAll('input[name="sex"]');
-
-//const meal = document.querySelectorAll('.meal:checked').value;
-
+const meal = document.querySelector('.meal');
 let button = document.getElementById('button');
 
 class Cat {
@@ -18,7 +16,7 @@ class Cat {
         this.phone = phone;
         this.breed = breed;
         this.sex = sex;
-        //this.meal = meal;
+        this.meal = meal;
     }
 }
 
@@ -39,7 +37,7 @@ function breedFunction(sel) {
 }
 
 function createCat() {
-    let cat = new Cat(nameCat, age, owner, email, phone, breedFunction(this.breed), checkSex());
+    let cat = new Cat(nameCat, age, owner, email, phone, breedFunction(this.breed), checkSex(), meal);
 
     console.log(`Имя: ${cat.name.value}` + `\n` 
     + `Возраст: ${cat.age.value}` + `\n` 
@@ -47,8 +45,8 @@ function createCat() {
     + `Почта владельца: ${cat.email.value}` + `\n`
     + `Телефон владельца: ${cat.phone.value}` + `\n`
     + `Порода: ${cat.breed}` + `\n`
-    + `Пол питомца: ${cat.sex}` + `\n`);
-    //+ `Питание: ${cat.meal}` + `\n`);
+    + `Пол питомца: ${cat.sex}` + `\n`
+    + `Питание: ${cat.meal.name}` + `\n`);
 }
 
 //let cat = new Cat('Барсик', 10, 'Анна', 'rezina@mail.ru', '89009990011', 'domestic', 'male');
