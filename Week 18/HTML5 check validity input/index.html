@@ -72,21 +72,23 @@
             <option value="fifth">Сиамская кошка</option>
         </select>
 
-        <p>
-            Чем питается?
-        </p>
-        <p>
-            <input type="checkbox" class="meal" name="Сухой корм" id="dry">Сухой корм
-            <!-- <label for="dry">Сухой корм</label> -->
-        </p>
-        <p>
-            <input type="checkbox" class="meal" name="Влажный корм" id="wet">Влажный корм
-            <!-- <label for="wet">Влажный корм</label> -->
-        </p>
-        <p>
-            <input type="checkbox" class="meal" name="Натуральный корм" id="natural" />Натуральный корм
-            <!-- <label for="natural">Натуральный корм</label> -->
-        </p>
+        <form class="meal__form">
+            <p>
+                Чем питается?
+            </p>
+            <p>
+                <input type="checkbox" class="meal" name="Сухой корм" id="dry">
+                <label for="dry" class="label">Сухой корм</label>
+            </p>
+            <p>
+                <input type="checkbox" class="meal" name="Влажный корм" id="wet">
+                <label for="wet" class="label">Влажный корм</label>
+            </p>
+            <p>
+                <input type="checkbox" class="meal" name="Натуральный корм" id="natural" />
+                <label for="natural" class="label">Натуральный корм</label>
+            </p>
+        </form>
 
         <p>Пол питомца</p>
         <input type="radio" name="sex" value="Самец" />Самец
