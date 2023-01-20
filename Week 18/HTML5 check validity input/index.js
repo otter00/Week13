@@ -23,8 +23,10 @@ class Cat {
 
 
 //class entity creates when button is clicked
+//clear the array for new values when button clicked
 button.addEventListener('click', ()=> {
     createCat();
+    arrayMeal = [];
 });
 
 //check which gender we chose and return it
@@ -64,19 +66,6 @@ let elems = document.querySelectorAll('.meal');
 //create array for meal text values
 let arrayMeal = [];
 //let catMeal = '';
-
-//clear the array for new values when button clicked
-button.addEventListener('click', ()=>{
-    // for (const el of elems) {
-    //     if(el.checked == true) {
-    //         console.log(el.name);
-    //     }
-    //     else { console.log('not checked'); }
-    // }
-    //checkMeal();
-    arrayMeal = [];
-})
-
 
 //check whether the name of checked box is equal to label text
 function checkMeal() {
