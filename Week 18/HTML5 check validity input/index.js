@@ -7,6 +7,7 @@ const sex = document.querySelectorAll('input[name="sex"]');
 let meals = document.querySelectorAll('.label');
 let button = document.getElementById('button');
 
+//create class Cat
 class Cat {
     constructor(name, age, owner, email, phone, breed, sex, meals) {
         this.name = name;
@@ -20,10 +21,13 @@ class Cat {
     }
 }
 
+
+//class entity creates when button is clicked
 button.addEventListener('click', ()=> {
     createCat();
 });
 
+//check which gender we chose and return it
 function checkSex() {
     for (const s of sex) {
         if (s.checked) {
@@ -32,13 +36,18 @@ function checkSex() {
     }
 }
 
+//check which breed we chose and return it
 function breedFunction(sel) {
     return(sel.options[sel.selectedIndex].text);
 }
 
+
+//create entity of Cat class
 function createCat() {
+    //declare class fields (some fields could be the results of the functioins)
     let cat = new Cat(nameCat, age, owner, email, phone, breedFunction(this.breed), checkSex(), checkMeal());
 
+    //display it into console
     console.log(`Имя: ${cat.name.value}` + `\n` 
     + `Возраст: ${cat.age.value}` + `\n` 
     + `Владелец: ${cat.owner.value}` + `\n` 
@@ -49,9 +58,14 @@ function createCat() {
     + `Питание: ${cat.meals}` + `\n`);
 }
 
+
+//catch each elem of checkbox
 let elems = document.querySelectorAll('.meal');
+//create array for meal text values
 let arrayMeal = [];
 //let catMeal = '';
+
+//clear the array for new values when button clicked
 button.addEventListener('click', ()=>{
     // for (const el of elems) {
     //     if(el.checked == true) {
@@ -59,16 +73,18 @@ button.addEventListener('click', ()=>{
     //     }
     //     else { console.log('not checked'); }
     // }
-    checkMeal();
+    //checkMeal();
     arrayMeal = [];
 })
 
+
+//check whether the name of checked box is equal to label text
 function checkMeal() {
     for (const el of elems) {
         for (const me of meals) {
             if ((el.checked == true) && (el.name == me.textContent)) {
                 //console.log(me.textContent);
-                arrayMeal.push(me.textContent);
+                arrayMeal.push(me.textContent); //if equal, push into array
             }
             //else { console.log('not checked'); }
             }
