@@ -1,3 +1,7 @@
+body {
+    padding-top: 25vh;
+}
+
 .buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -8,8 +12,8 @@
 
 button {
     font-size: 16px;
-    background-color: rgb(253, 212, 255);
-    border: 3px solid rgb(228, 140, 232);
+    background-color: rgba(215, 112, 34, 0.57);
+    border: 3px solid brown;
     padding: 3% 0 3% 0;   
 }
 
@@ -31,7 +35,7 @@ button {
 input {
     display: flex;
     flex-direction: column;
-    border: 3px solid rgb(228, 140, 232);
+    border: 3px solid brown;
 }
 
 #first_value, #second_value {
@@ -48,7 +52,7 @@ input {
     margin-top: 5vh;
     margin-left: 10px;
     width: 10vw;
-    border: 3px solid rgb(228, 140, 232);
+    border: 3px solid brown;
     height: 2.3vh;
 }
 
