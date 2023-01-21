@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleCalculator</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="pictures">
+        <div class="background__pic" onclick="this.style.background='rgb(228, 140, 232)'"><span>+</span></div>
+        <div class="background__pic" onclick="this.style.background='rgb(108, 186, 186)'"><span>-</span></div>
+        <div class="background__pic" onclick="this.style.background='rgb(228, 140, 232)'"><span>*</span></div>
+        <div class="background__pic" onclick="this.style.background='rgb(108, 186, 186)'"><span>%</span></div>
+    </div>
+
+    <p class="title">Simple Calculator</p>
+
+    <input id="first_value" />
+    <input id="second_value" />
+
+    <div id="calc_buttons" class="buttons">
+        <button id="add" onClick="op='+'">Сложить</button>
+        <button id="sub" onClick="op='-'">Вычесть</button>
+        <button id="mult" onClick="op='*'">Умножить</button>
+        <button id="div" onClick="op='/'">Разделить</button>
+    </div>
+
+    <div class="result">
+        <button class="res" onClick="calc()">Результат: </button>
+        <div id="result"></div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
