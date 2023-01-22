@@ -41,31 +41,51 @@ class ValidatorStatic {
     }
 }
 
-const mailTrue = 'ivlevanastia2001@mail.ru';
-const mailFalse = 'bla bla bla';
-//console.log(ValidatorStatic.isEmail(mailTrue)); //true
-//console.log(ValidatorStatic.isEmail(mailFalse)); //false
+let first = document.getElementById("first_value");
+//console.dir(first)
+let button__check = document.querySelector('.button__check');
+let result = document.querySelector('.msg');
 
-const domainTrue = 'itgirlschool.ru';
-const domainFalse = 'bla bla bla';
-//console.log(ValidatorStatic.isDomain(domainTrue)); //true
-//console.log(ValidatorStatic.isDomain(domainFalse)); //false
+button__check.addEventListener('click', ()=>{
+    let msg;
+    //msg = ValidatorStatic.isEmail(first.value);
+    //msg = ValidatorStatic.isDomain(first.value);
+    //msg = ValidatorStatic.isDate(first.value);
+    //msg = ValidatorStatic.isPhone(first.value);
+    result.innerHTML = msg;
 
-const dateTrue = '2023-01-21 22:15'; //t
-const dateTrue2 = '2023/01/21 22:15'; //t
-const dateTrue3 = '2023.01.21 22:15'; //t
-const dateFalse = '2023.01.21'; //f
-const dateFalse1 = 'bla bla bla'; //f
+    //console.log(msg);
+    //console.log(first.value);
+});
+
+
+//      TEST PART       //
+
+// const mailTrue = 'ivlevanastia2001@mail.ru';
+// const mailFalse = 'bla bla bla';
+// console.log(ValidatorStatic.isEmail(mailTrue)); //true
+// console.log(ValidatorStatic.isEmail(mailFalse)); //false
+
+// const domainTrue = 'itgirlschool.ru';
+// const domainFalse = 'bla bla bla';
+// console.log(ValidatorStatic.isDomain(domainTrue)); //true
+// console.log(ValidatorStatic.isDomain(domainFalse)); //false
+
+// const dateTrue = '2023-01-21 22:15'; //t
+// const dateTrue2 = '2023/01/21 22:15'; //t
+// const dateTrue3 = '2023.01.21 22:15'; //t
+// const dateFalse = '2023.01.21'; //f
+// const dateFalse1 = 'bla bla bla'; //f
 // console.log(ValidatorStatic.isDate(dateTrue)); //true
 // console.log(ValidatorStatic.isDate(dateTrue2)); //true
 // console.log(ValidatorStatic.isDate(dateTrue3)); //true
 // console.log(ValidatorStatic.isDate(dateFalse)); //true
 // console.log(ValidatorStatic.isDate(dateFalse1)); //false
 
-const phoneTrue = '+7 (900) 000 00-00'; //t
-const phoneTrue1 = '8 900 000-00-00'; //t
-const phoneTrue2 = '8(900) 111-2233'; //t
-const phoneFalse = 'bla bla bla'; //f
+// const phoneTrue = '+7 (900) 000 00-00'; //t
+// const phoneTrue1 = '8 900 000-00-00'; //t
+// const phoneTrue2 = '8(900) 111-2233'; //t
+// const phoneFalse = 'bla bla bla'; //f
 // console.log(ValidatorStatic.isPhone(phoneTrue)); //true
 // console.log(ValidatorStatic.isPhone(phoneTrue1)); //true
 // console.log(ValidatorStatic.isPhone(phoneTrue2)); //true
@@ -122,7 +142,7 @@ class Validator {
     }
 }
 
-let validValue = new Validator();
+//let validValue = new Validator();
 
 // console.log(validValue.isEmail('aaa@mail.ru')); //t
 // console.log(validValue.isEmail('aaa')); //f
