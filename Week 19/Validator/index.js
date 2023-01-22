@@ -1,3 +1,10 @@
+//      DEFINE EACH ELEM OF THE FORM        //
+
+let first = document.getElementById("first_value");
+//console.dir(first)
+let button__check = document.querySelector('.button__check');
+let result = document.querySelector('.msg');
+
 //      VALIDATOR STATIC CLASS      //
 class ValidatorStatic {
     static isEmail(email) {
@@ -40,23 +47,6 @@ class ValidatorStatic {
         return false;
     }
 }
-
-let first = document.getElementById("first_value");
-//console.dir(first)
-let button__check = document.querySelector('.button__check');
-let result = document.querySelector('.msg');
-
-button__check.addEventListener('click', ()=>{
-    let msg;
-    //msg = ValidatorStatic.isEmail(first.value);
-    //msg = ValidatorStatic.isDomain(first.value);
-    //msg = ValidatorStatic.isDate(first.value);
-    //msg = ValidatorStatic.isPhone(first.value);
-    result.innerHTML = msg;
-
-    //console.log(msg);
-    //console.log(first.value);
-});
 
 
 //      TEST PART       //
@@ -142,7 +132,29 @@ class Validator {
     }
 }
 
-//let validValue = new Validator();
+let validValue = new Validator();
+
+button__check.addEventListener('click', ()=>{
+    let msg;
+
+        //  VALIDATOR STATIC - call methods directly
+    //msg = ValidatorStatic.isEmail(first.value);
+    //msg = ValidatorStatic.isDomain(first.value);
+    //msg = ValidatorStatic.isDate(first.value);
+    //msg = ValidatorStatic.isPhone(first.value);
+
+        //  VALIDATOR NOT STATIC - call methods by creating an object
+    //msg = validValue.isEmail(first.value);
+    //msg = validValue.isDomain(first.value);
+    //msg = validValue.isDate(first.value);
+    //msg = validValue.isPhone(first.value);
+
+        //  RESULT
+    result.innerHTML = msg;
+
+    //console.log(msg);
+    //console.log(first.value);
+});
 
 // console.log(validValue.isEmail('aaa@mail.ru')); //t
 // console.log(validValue.isEmail('aaa')); //f
