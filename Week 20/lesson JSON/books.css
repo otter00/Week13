@@ -1,15 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 #booksContainer {
     display: flex;
     justify-content: space-between;
+    width: 100vw;
+    flex-direction: row;
 }
 
 .book {
-    background-color: bisque;
-    padding: 25px;
-    min-height: 200px;
-    text-align: center;
-    align-content: center;
+    padding: 20px;
+    padding-bottom: 35px;
+    border: 2px solid bisque;
+    background-color: blanchedalmond;
     border-radius: 10px;
-    font-weight: 500;
-    font-size: 18px;
+    text-align: center;
+    margin: 10px;
 }
