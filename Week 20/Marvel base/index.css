@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#gallery__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.gallery__card {
+    display: flex;
+    flex-direction: column;
+
+    padding: 1em;
+    padding-bottom: 2vh;
+    border: 2px solid bisque;
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0.5em;
+
+    width: 45vw;
+    height: 80vh;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+
+p, span {
+    font-size: 0.8em;
+}
+
+img {
+    width: 20vw;
+    height: 30vh;
+    margin: 1em;
+}
