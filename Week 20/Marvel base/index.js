@@ -99,11 +99,11 @@ document.addEventListener('DOMContentLoaded', function (e) {
     for(let card of cards) {
         cardsContent += `<div class='gallery__card'>
         <h2>${card.name}</h2>` + 
-        `<span>${card.universe}</span>` + 
-        `<span>${card.alterego}</span>` + 
-        `<span>${card.occupation}</span>` + 
-        `<span>${card.friends}</span>` +
-        `<span>${card.superpowers}</span>` + 
+        `<h3>${card.universe}</h3>` + 
+        `<span class='alterego'>${card.alterego}</span>` + 
+        `<span><p class='bold__text'>Специализация:</p> ${card.occupation}</span>` + 
+        `<span><p class='bold__text'>Союзники:</p> ${card.friends}</span>` +
+        `<span><p class='bold__text'>Суперспособности:</p> ${card.superpowers}</span>` + 
         `<div><img src='${card.url}'></div>` + 
         `<p>${card.info}</p>
         </div>`;
