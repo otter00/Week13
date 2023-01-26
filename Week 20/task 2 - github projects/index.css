@@ -1,0 +1,43 @@
+.list {
+    display: flex;
+    flex-direction: column;
+
+    width: 25vw;
+}
+
+#name {
+    font-size: 24px;
+    margin-bottom: 12px;
+    font-style: italic;
+    align-self: center;
+}
+
+#button {
+    font-size: 16px;
+    margin: 20px 0 20px 0;
+    font-style: italic;
+    align-self: center;
+
+    border-radius: 16px;
+    border: 1px solid rgb(63, 96, 244);
+    background-color: rgb(144, 165, 254);
+    color: white;
+
+    width: 10vw;
+    height: 5vh;
+}
+
+#button:hover {
+    cursor: pointer;
+    background-color: rgb(63, 96, 244);
+    transition: background-color 500ms;
+}
+
+#projects {
+    display: flex;
+    justify-content: center;
+    width: 25vw;
+
+    font-size: 18px;
+    line-height: 4vh;
+}
