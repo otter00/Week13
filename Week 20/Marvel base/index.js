@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
         <p>${card.info}</p>
         </form>
 
-        <div id='labels'>      
+        <div id='${counter}'>      
         <label class="container__label" for="">
         <input type="radio" value='1' class="container__input" name="raiting">
             <svg class="icon">
