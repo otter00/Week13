@@ -155,17 +155,27 @@ document.addEventListener('DOMContentLoaded', function (e) {
     //set cards into document
     document.getElementById('gallery__container').innerHTML = cardsContent;
 
-    const root = document.querySelectorAll('.container__input')
-    console.log(root);
-
     const icons = document.querySelectorAll('.icon');
     console.log(icons);
+
+    const inputs = document.querySelectorAll('.container__input')
+    console.log(inputs);
 });
 
+
 const root = document.querySelector('#gallery__container');
+console.log(root);
+
+// root.addEventListener('click', (event)=>{
+//      console.log('click');
+
+//      if (event.target.classList.contains('container__input')) {
+//         console.log('click')
+//      }
+// });
 
 root.addEventListener('click', (event) => {
-  if (event.target.classList.contains('container__input')) {
+    if (event.target.classList.contains('container__input')) {
     const form = event.target.parentNode.parentNode;
     const inputs = form.querySelectorAll('.container__input');
     const icons = form.querySelectorAll('.icon');
@@ -173,19 +183,19 @@ root.addEventListener('click', (event) => {
     const value = event.target.value;
 
     icons.forEach((elem) => {
-      elem.style = 'fill: black';
+        elem.style = 'fill: black';
     })
 
     for (let i = 0; i < inputs.length; i++) {
-      icons[i].style = 'fill: gold';
-      if (inputs[i].checked) {
-        break;
-      }
+        icons[i].style = 'fill: gold';
+        if (inputs[i].checked) {
+            break;
+        }
     }
 
     // console.log(event.target.value);
     localStorage.setItem(key, value);
-  }
+    }
 });
 
 /* <div class="rating-area">
