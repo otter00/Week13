@@ -15,8 +15,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    padding: 5%;
-    padding-bottom: 0.5vh;
+    padding: 5% 5% 0 5%;
     border: 2px solid bisque;
     background-color: blanchedalmond;
     border-radius: 10px;
@@ -27,6 +26,7 @@ body {
 h2 {
     font-size: 1.8em;
     margin-bottom: 0.2em;
+    margin-top: 0;
 }
 h3 {
     margin-top: 0.1em;
@@ -57,7 +57,37 @@ img {
 
 /*          RAITING PART          */
 
-.rating-area {
+.icon {
+    /* goldenrod */
+    fill: black ;
+    width: 1em;
+    height: 1em;
+    display: flex;
+}
+
+.container__label {
+    position: relative;
+}
+
+.container__input {
+    /* display: none; */
+    position: relative;
+    opacity: 0;
+    z-index: 1;
+}
+
+svg {
+    margin-top: 1.2em;
+}
+
+#labels {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 2em;
+}
+
+/* .rating-area {
 	overflow: hidden;
 	margin: auto;
 }
@@ -95,4 +125,4 @@ img {
 }
 .rate-area > label:active {
 	position: relative;
-}
+} */

@@ -95,32 +95,108 @@ document.addEventListener('DOMContentLoaded', function (e) {
     console.log(cards);
 
     let cardsContent = "";
+    let counter = 1; //dynamic form id
 
     for(let card of cards) {
         cardsContent += `<div class='gallery__card'>
-        <h2>${card.name}</h2>` + 
-        `<h3>${card.universe}</h3>` + 
-        `<span class='alterego'>${card.alterego}</span>` + 
-        `<span><p class='bold__text'>Специализация:</p> ${card.occupation}</span>` + 
-        `<span><p class='bold__text'>Союзники:</p> ${card.friends}</span>` +
-        `<span><p class='bold__text'>Суперспособности:</p> ${card.superpowers}</span>` + 
-        `<div><img src='${card.url}'></div>` + 
-        `<p>${card.info}</p>
+        <h2 class='card__name'>${card.name}</h2>` + 
+        `<form id='${counter}' action="#">
+        <h3>${card.universe}</h3>
+        <span class='alterego'>${card.alterego}</span> 
+        <span><p class='bold__text'>Специализация:</p> ${card.occupation}</span>
+        <span><p class='bold__text'>Союзники:</p> ${card.friends}</span>
+        <span><p class='bold__text'>Суперспособности:</p> ${card.superpowers}</span> 
+        <div><img src='${card.url}'></div>
+        <p>${card.info}</p>
+        </form>
 
-            <div class="rating-area">
-        <input type="radio" id="star-5" name="rating" value="5">
-        <label for="star-5" title="Оценка «5»"></label>	
-        <input type="radio" id="star-4" name="rating" value="4">
-        <label for="star-4" title="Оценка «4»"></label>    
-        <input type="radio" id="star-3" name="rating" value="3">
-        <label for="star-3" title="Оценка «3»"></label>  
-        <input type="radio" id="star-2" name="rating" value="2">
-        <label for="star-2" title="Оценка «2»"></label>    
-        <input type="radio" id="star-1" name="rating" value="1">
-        <label for="star-1" title="Оценка «1»"></label>
-            </div>
-        </div>`
+        <div id='labels'>      
+        <label class="container__label" for="">
+        <input type="radio" value='1' class="container__input" name="raiting">
+            <svg class="icon">
+                <use xlink:href="icons/sprite.svg#star-full-icon"></use>
+            </svg>
+        </label>
+
+        <label class="container__label" for="">
+        <input type="radio" value='2' class="container__input" name="raiting">
+            <svg class="icon">
+                <use xlink:href="icons/sprite.svg#star-full-icon"></use>
+            </svg>
+        </label>
+
+        <label class="container__label" for="">
+        <input type="radio" value='3' class="container__input" name="raiting">
+            <svg class="icon">
+                <use xlink:href="icons/sprite.svg#star-full-icon"></use>
+            </svg>
+        </label>
+
+        <label class="container__label" for="">
+        <input type="radio" value='4' class="container__input" name="raiting">
+            <svg class="icon">
+                <use xlink:href="icons/sprite.svg#star-full-icon"></use>
+            </svg>
+        </label>
+
+        <label class="container__label" for="">
+        <input type="radio" value='5' class="container__input" name="raiting">
+            <svg class="icon">
+                <use xlink:href="icons/sprite.svg#star-full-icon"></use>
+            </svg>
+        </label>
+        </div> 
+
+        </div>`;
+        counter++; //increment the value
+    }
+    //console.log(cardsContent);
+
+    //set cards into document
+    document.getElementById('gallery__container').innerHTML = cardsContent;
+
+    const root = document.querySelectorAll('.container__input')
+    console.log(root);
+
+    const icons = document.querySelectorAll('.icon');
+    console.log(icons);
+});
+
+const root = document.querySelector('#gallery__container');
+
+root.addEventListener('click', (event) => {
+  if (event.target.classList.contains('container__input')) {
+    const form = event.target.parentNode.parentNode;
+    const inputs = form.querySelectorAll('.container__input');
+    const icons = form.querySelectorAll('.icon');
+    const key = form.id;
+    const value = event.target.value;
+
+    icons.forEach((elem) => {
+      elem.style = 'fill: black';
+    })
+
+    for (let i = 0; i < inputs.length; i++) {
+      icons[i].style = 'fill: gold';
+      if (inputs[i].checked) {
+        break;
+      }
     }
 
-    document.getElementById('gallery__container').innerHTML = cardsContent;
+    // console.log(event.target.value);
+    localStorage.setItem(key, value);
+  }
 });
+
+/* <div class="rating-area">
+<input type="radio" id="star-5" name="rating" value="5">
+<label for="star-5" title="Оценка «5»"></label>	
+<input type="radio" id="star-4" name="rating" value="4">
+<label for="star-4" title="Оценка «4»"></label>    
+<input type="radio" id="star-3" name="rating" value="3">
+<label for="star-3" title="Оценка «3»"></label>  
+<input type="radio" id="star-2" name="rating" value="2">
+<label for="star-2" title="Оценка «2»"></label>    
+<input type="radio" id="star-1" name="rating" value="1">
+<label for="star-1" title="Оценка «1»"></label>
+</div> */
