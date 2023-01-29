@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
         <p>${card.info}</p>
         </form>
 
-        <div id='${counter}'>      
+        <div class='labels' id='${counter}'>      
         <label class="container__label" for="">
         <input type="radio" value='1' class="container__input" name="raiting">
             <svg class="icon">
@@ -166,14 +166,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
 const root = document.querySelector('#gallery__container');
 console.log(root);
 
-// root.addEventListener('click', (event)=>{
-//      console.log('click');
-
-//      if (event.target.classList.contains('container__input')) {
-//         console.log('click')
-//      }
-// });
-
 root.addEventListener('click', (event) => {
     if (event.target.classList.contains('container__input')) {
     const form = event.target.parentNode.parentNode;
@@ -197,3 +189,63 @@ root.addEventListener('click', (event) => {
     localStorage.setItem(key, value);
     }
 });
+
+//get all the keys of object (localstorage is object)
+const allKeys = Object.keys(localStorage);
+for (const key of allKeys) {
+    console.log(key);
+    console.log(localStorage[key]);
+}
+
+//делаем проверку, есть ли заметки в локальном хранилище. Внимание! Этот материал вы еще не проходили, это уже работа с объектами. Усложненная часть задачи
+if (localStorage.length != 0) {
+    const arrKeys = Object.keys(localStorage);
+    //переписала функцию без получения методов. Расскажу на ближайших уроках почему не получилось в первый раз и почему сработает этот способ. Костыль убрала! 
+    arrKeys.forEach((key) => {
+        //console.log(arrKeys);
+        console.log('here we have ' + key);
+        console.log('with value ' + localStorage[key]);
+    })
+}
+
+//check whether localstorage has objects
+document.addEventListener('DOMContentLoaded', ()=> {
+
+    const form = document.querySelectorAll('form');
+    console.log(form);
+    
+    const inputs = document.querySelectorAll('.container__input');
+    console.log(inputs);
+    
+    const icons = document.querySelectorAll('.icon');
+    console.log(icons);
+    
+    for(let f of form) {
+      console.log(f)
+      console.log(f.id);
+    }
+    
+    for(let i of inputs) {
+      console.log(i)
+    }
+    
+    // if (root.contains('container__input')) {
+    //   const form = root.parentNode.parentNode;
+    //   const inputs = form.querySelectorAll('.container__input');
+    //   const icons = form.querySelectorAll('.icon');
+    //   const key = form.id;
+    //   const value = event.target.value;
+    
+    //   console.log(inputs);
+    
+      // icons.forEach((elem) => {
+      //   elem.style = 'fill: black';
+      // })
+    
+      // for (let i = 0; i < inputs.length; i++) {
+      //   icons[i].style = 'fill: gold';
+      //   if (inputs[i].checked) {
+      //     break
+      //   }
+      // }
+    });

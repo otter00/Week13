@@ -82,7 +82,7 @@ img {
     margin-top: 1.2em;
 } */
 
-#labels {
+.labels {
     display: flex;
     justify-content: center;
 
