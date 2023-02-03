@@ -1,7 +1,8 @@
 /*      AUTHORIZATION CHANGE        */
 
 let button = document.querySelector(".login-form__btn");
-let form = document.querySelector('form');
+let form = document.querySelector('#login__form');
+let formItems = document.querySelector('.validate-form');
 let errors = [];
 
 let genderM = document.getElementById('genderM');
@@ -69,7 +70,7 @@ button.addEventListener('click', ()=>{
 
     if (errors.length == 0) {
         alert(`Welcome, ${document.getElementById("login__input").value}`);
-        location.reload(); //перезагружаем страницу, если всё введено корректно, 
+        //location.reload(); //перезагружаем страницу, если всё введено корректно, 
         //чтобы очистить поля для дальнейшего ввода
     }
 
@@ -80,9 +81,10 @@ button.addEventListener('click', ()=>{
 button.onclick = function (e) {
     e.preventDefault();
 
-    fetch("https://httpbin.org/post",
+    fetch("/httpbin.org/api/post/",
         {
             method: 'POST',
+            headers: { 'Content-Type': 'multipart/form-data' },
             body: new FormData(form)
         })
         .then(response => response.json())
@@ -91,3 +93,12 @@ button.onclick = function (e) {
         })
         .catch(error => console.log(error));
 }
+
+document.addEventListener('DOMContentLoaded', (event)=> {
+    let formItems = event.target.form1;
+    console.log(formItems);
+
+    for(item of formItems) {
+        console.log(item);
+    }
+});
