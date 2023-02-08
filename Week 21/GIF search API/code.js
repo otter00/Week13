@@ -1,10 +1,26 @@
 function onSearch() {
     const key = 'a9jWZWAGcI4zxh3ItQmIGN9h9nhkjMTl';
     const query = document.getElementById('gif__search').value;
+
     //const gif__pic = document.querySelector('#gif__pic');
 
+    try {
+        if (query == '') {
+            throw new Error('Field is empty!');
+        }
+    } catch(error) {
+        console.log(error);
+    }
+
     fetch(`https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${query}&limit=5&offset=0&rating=g&lang=en`)
-    .then(response => response.json())
+    .then(response => {
+        {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error('Address is unavailable :((( ');
+        }
+    })
     .then(gif => {
         // for(g of gif.data) {
         //     console.log(g);
@@ -19,5 +35,6 @@ function onSearch() {
             document.body.append(div);
         }
     })
-    .catch(error => console.log(error));
+    .catch(error => alert(error))
+    .finally(console.log(`Work's done`));
 }
