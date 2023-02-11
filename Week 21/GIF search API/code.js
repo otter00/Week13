@@ -30,7 +30,7 @@ function onSearch() {
 
         for(let i = 0; i < gif.data.length; i++) {
             //gif__pic.src = gif.data[i].images['480w_still'].url;
-            const div = document.createElement('div');
+            var div = document.createElement('div');
             div.innerHTML = `<img src='${gif.data[i].images.fixed_height.url}' />`;
             document.body.append(div);
         }

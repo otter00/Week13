@@ -8,8 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "Week13"
+    "url": "https://github.com/otter00/Week13/tree/master/Week%2022/chartboard"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "animejs": "^3.2.1",
+    "chart.js": "^4.2.1",
+    "color": "^4.2.3",
+    "moment": "^2.29.4"
+  }
 }
