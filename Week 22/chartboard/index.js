@@ -1,9 +1,8 @@
 var Chart = require('chart.js/auto');
 var moment = require('moment');
-//const Color = require('color');
-// import { getRelativePosition } from 'chart.js/helpers';
 
 console.log(moment().format());
+
 const ctx = document.getElementById('myChart');
 
 new Chart(ctx, {
@@ -13,7 +12,8 @@ new Chart(ctx, {
     datasets: [{
         label: '# of Votes',
         data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
+        borderWidth: 1,
+        borderColor: 'red',
     }]
     },
     options: {
@@ -63,3 +63,6 @@ for (var i = 0; i < letterEls.length; i++) {
         loop: true
     });
 }
+
+var curDate = document.querySelector('.current-date');
+curDate.append(moment().format('MMMM Do YYYY, h:mm:ss a'));

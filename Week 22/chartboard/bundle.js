@@ -1,10 +1,9 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 var Chart = require('chart.js/auto');
 var moment = require('moment');
-//const Color = require('color');
-// import { getRelativePosition } from 'chart.js/helpers';
 
 console.log(moment().format());
+
 const ctx = document.getElementById('myChart');
 
 new Chart(ctx, {
@@ -14,7 +13,8 @@ new Chart(ctx, {
     datasets: [{
         label: '# of Votes',
         data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
+        borderWidth: 1,
+        borderColor: 'red',
     }]
     },
     options: {
@@ -64,6 +64,9 @@ for (var i = 0; i < letterEls.length; i++) {
         loop: true
     });
 }
+
+var curDate = document.querySelector('.current-date');
+curDate.append(moment().format('MMMM Do YYYY, h:mm:ss a'));
 },{"animejs":3,"chart.js/auto":4,"moment":7}],2:[function(require,module,exports){
 /*!
  * @kurkle/color v0.3.2
