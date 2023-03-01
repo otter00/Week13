@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="hh"></p>
+    <form id="frm1">
+        <table>
+            <tr>
+                <td>ID:</td>
+                <td><input type="text" id="tbID" /></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" id="tbName" /></td>
+            </tr>
+            <tr>
+                <td>Location:</td>
+                <td><input type="text" id="tbLocation" /></td>
+            </tr>
+            <tr>
+                <td><button id="btnInsert" onclick="Insert()">Insert</button></td>
+            </tr>
+        </table>
+    </form>
+    <table id="tblGrid" cellpadding="10px" cellspacing="0">
+        <tr style="background-color:black;color:white;font-size:18px;">
+            <td>
+                ID
+            </td>
+            <td>
+                Name
+            </td>
+            <td>
+                Location
+            </td>
+        </tr>
+    </table>
+
+    <script src="code.js"></script>
+</body>
+
+</html>
