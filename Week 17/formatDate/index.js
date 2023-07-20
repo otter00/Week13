@@ -33,3 +33,4 @@ formatDate(new Date(new Date - 1)); // "прямо сейчас"
 formatDate(new Date(new Date - 30 * 1000)); // "30 сек. назад"
 formatDate(new Date(new Date - 5 * 60 * 1000)); // "5 мин. назад"
 formatDate(new Date(new Date - new Date(new Date - 24*60*60*1000))); // вчерашняя дата вроде 30.12.2022, 21:54
+

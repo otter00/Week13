@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: center;
+
+    .little__div {
+        width: 200px;
+        height: 200px;
+
+        margin: 20px;
+
+        border: 1px solid salmon;
+    }
+
+    .styled__div {
+        background-color: salmon;
+    }
+}

@@ -1,0 +1,44 @@
+body {
+    background-color: rgba(0, 0, 0, 0.838);
+}
+
+form {
+    margin: 20vh 35vw 5vh 35vw;
+}
+ul {
+    margin: 0vh 35vw;
+}
+
+input {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+input::placeholder {
+    margin: 3px;
+}
+
+label {
+    color: white;
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: rgb(255, 234, 48);
+    border: 1px solid rgb(255, 234, 48);
+}
+
+input, button {
+    display: inline;
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.search-results {
+    color: white;
+
+}

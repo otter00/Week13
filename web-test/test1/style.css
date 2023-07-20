@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+.container .little__div {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  border: 1px solid salmon;
+}
+.container .styled__div {
+  background-color: salmon;
+}/*# sourceMappingURL=style.css.map */
