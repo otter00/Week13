@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #b .c {
+            color: red;
+        }
+
+        .a .b .c {
+            color: green;
+        }
+
+        #a #b {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block">
+        <ul class="list list-1">
+            <li class="elem elem-1"><a class="link">1 1</a></li>
+            <li class="elem elem-2"><a class="link">1 2</a></li>
+            <li class="elem elem-3"><a class="link">1 3</a></li>
+        </ul>
+    </div>
+    <div class="block">
+        <ul class="list list-2">
+            <li class="elem elem-1"><a class="link">2 1</a></li>
+            <li class="elem elem-2"><a class="link">2 2</a></li>
+            <li class="elem elem-3"><a class="link">2 3</a></li>
+        </ul>
+    </div>
+
+    <div id="a" class="a">
+        <div id="b" class="b">
+            <div class="c">
+                HELLO
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    let abs = document.querySelector('.list-2 .elem-3 a')
+    console.log(abs)
+
+    window.addEventListener('resize', function () {
+        console.log('Окно браузера изменило размер');
+        // Здесь вы можете добавить код для обновления ваших элементов или стилей
+    });
+
+    // Получаем ссылку на элемент
+    //const element = document.getElementById('myElement');
+
+    // Создаем новый элемент
+    //const newParagraph = document.createElement('p');
+    //newParagraph.textContent = 'Новое содержимое';
+
+    // Заменяем старый элемент новым
+    //element.innerHTML = ''; // Очищаем содержимое
+    //element.appendChild(newParagraph);
+
+    function countDown(num) {
+        if (num === 0) {
+            return;
+        }
+
+        console.log(num)
+        countDown(num - 1)
+    }
+
+    countDown(5)
+
+    console.log(typeof (NaN))
+    console.log(typeof (null))
+
+    const element = NaN;
+
+    if (isNaN(element)) {
+        console.log('its nan')
+    }
+
+    const fun = () => { };
+    console.log(fun instanceof Object)
+
+    const name = 'Dima'
+
+    function sayName1() {
+        console.log(name)
+    }
+
+    function sayName2(name) {
+        console.log(name)
+    }
+
+    sayName1()
+    sayName1('Vova')
+    sayName2()
+    sayName2('Vova')
+
+    const obj = {}
+
+    Object.defineProperty(obj, 'key', {
+        value: 'value',
+        writable: false
+    })
+
+    obj.key = 'newkey'
+
+    console.log(obj.key)
+
+    const array = [2, 4, 6, 8]
+    //const result = array.map((value, i) => value ** i)
+    //console.log(result)
+    const result = array.every(el => el % 2)
+    console.log(result)
+
+    console.log('1')
+
+    setTimeout(function () {
+        console.log('2')
+    }, 0)
+
+    console.log('3')
+
+    Promise.resolve().then(() => console.log('1'))
+    setTimeout(() => console.log('2'))
+    console.log('3')
+
+    // key-value
+    const obj = {
+        name: 'John',
+        age: 30,
+        city: 'New York'
+    };
+
+    const entriesArray = Object.entries(obj);
+
+    console.log(entriesArray);
+
+    const obj = {
+        visibleProperty: 'This is visible',
+        hiddenProperty: 'This is hidden'
+    };
+
+    Object.defineProperty(obj, 'hiddenProperty', {
+        enumerable: false
+    });
+
+    for (const key in obj) {
+        console.log(key); // Выведет только "visibleProperty"
+    }
+</script>
+
+</html>
