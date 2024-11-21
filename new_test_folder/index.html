@@ -10,10 +10,33 @@
 
 <body>
     <main id="main-container">
-        <!-- контейнер для динамических данных -->
+        <!-- контейнер для динамических данных из файла index.js в формате JSON -->
+
+        <!-- инпут для загрузки файла с текстовым содержимым -->
+        <input type="file" onchange="readFile(this)" />
     </main>
 
-    <script src="index.js"></script>
+    <!-- раскомментировать скрипт для index.js -->
+    <!-- <script src="index.js"></script> -->
+
+    <!-- раскомментировать скрипт для txt -->
+    <script>
+        function readFile(input) {
+            let file = input.files[0];
+
+            let reader = new FileReader();
+
+            reader.readAsText(file);
+
+            reader.onload = function () {
+                document.getElementById("main-container").innerHTML = `<p>${reader.result}</p>`;
+            };
+
+            reader.onerror = function () {
+                console.log(reader.error);
+            };
+        }
+    </script>
 </body>
 
 </html>
